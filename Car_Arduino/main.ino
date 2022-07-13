@@ -128,7 +128,7 @@ void SpeedTask(void *pvParameters)
     
     vTaskDelay(50 / portTICK_PERIOD_MS);//每隔50ms更新一次
     run_controller();
-    if (((distance1<=300) && (distance1>0))||((distance2<=300) && (distance2>0)))
+    if (((distance1<=400) && (distance1>0))||((distance2<=400) && (distance2>0)))
     {
       stop_car(&Motor0, EMERGENCY_STOP);
       stop_car(&Motor1, EMERGENCY_STOP);

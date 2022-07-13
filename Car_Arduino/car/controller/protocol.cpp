@@ -208,13 +208,13 @@ static void C_setspeed(void)
     Controller.target_leftspeed = leftspeed;
     Controller.target_rightspeed = rightspeed;
   }
-  else if ((distance1<=300) || (distance2<=300))
+  else if (((distance1<=400)&&(distance1>0)) || ((distance2<=400)&&(distance2>0)))
      {
        Controller.stop_flag = EMERGENCY_STOP;
        Controller.target_leftspeed = 0;
        Controller.target_rightspeed = 0;
      }
-      else if ((distance1>300)&&(distance2>300))
+      else 
       {
         Controller.stop_flag = MOVING;
         Controller.target_leftspeed = leftspeed;
